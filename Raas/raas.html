@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Recruitment as a Service – Infocareer Pvt Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   INFOCAREER SITE — MATCHED COLOUR SYSTEM
+   Primary orange:  #e8581a  (from logo / buttons)
+   Dark header bg:  #1e2535  (top bar & footer)
+   White body:      #ffffff
+   Light grey bg:   #f5f5f5
+   Body text:       #444444
+   Headings:        #222222
+   Border:          #e0e0e0
+   ============================================================ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #444;
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  img { max-width: 100%; }
+  a { color: #e8581a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: #1e2535;
+    padding: 8px 0;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.7);
+  }
+  .topbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .topbar a { color: rgba(255,255,255,0.7); font-size: 12.5px; }
+  .topbar a:hover { color: #e8581a; text-decoration: none; }
+  .topbar-left { display: flex; gap: 20px; align-items: center; }
+  .topbar-right { display: flex; gap: 14px; align-items: center; }
+
+  /* ── MAIN NAV ── */
+  header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e2535;
+    letter-spacing: -0.5px;
+  }
+  .logo-text span { color: #e8581a; }
+  .logo-tag {
+    font-size: 9.5px;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: -2px;
+  }
+  nav ul { display: flex; list-style: none; gap: 4px; align-items: center; }
+  nav a {
+    display: block;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #333;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover { color: #e8581a; background: #fdf2ec; text-decoration: none; }
+  nav a.active { color: #e8581a; }
+  .btn-schedule {
+    background: #e8581a !important;
+    color: #fff !important;
+    padding: 8px 18px !important;
+    border-radius: 4px !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    transition: background 0.2s !important;
+  }
+  .btn-schedule:hover { background: #c94d16 !important; }
+
+  /* ── PAGE HERO BANNER ── */
+  .page-banner {
+    background: linear-gradient(135deg, #1e2535 0%, #2c3a55 100%);
+    padding: 56px 24px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: #e8581a;
+  }
+  .page-banner h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.55); }
+  .breadcrumb a:hover { color: #e8581a; text-decoration: none; }
+  .breadcrumb span.sep { color: rgba(255,255,255,0.3); }
+  .breadcrumb span.current { color: #e8581a; font-weight: 600; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 64px 24px; }
+  .section.bg-light { background: #f5f5f5; }
+  .section.bg-dark { background: #1e2535; }
+  .container { max-width: 1150px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e8581a;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e2535;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .section-title.light { color: #fff; }
+  .section-title span { color: #e8581a; }
+  .section-body {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 640px;
+  }
+  .section-body.wide { max-width: 100%; }
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: #e8581a;
+    margin: 14px 0 28px;
+    border-radius: 2px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: #e8581a;
+    padding: 28px 24px;
+  }
+  .stats-inner {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 8px 20px;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-lbl {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── INTRO ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .intro-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+  .intro-image-placeholder {
+    background: linear-gradient(135deg, #1e2535 0%, #2c3a55 100%);
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+  .intro-image-placeholder .big-icon { font-size: 56px; }
+  .intro-image-placeholder p { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* ── CHALLENGE CARDS ── */
+  .cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 26px 22px;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+    transform: translateY(-3px);
+    border-color: #e8581a;
+  }
+  .card-icon {
+    width: 46px; height: 46px;
+    background: #fdf2ec;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e2535;
+    margin-bottom: 8px;
+  }
+  .card p { font-size: 13.5px; color: #666; line-height: 1.65; }
+
+  /* ── SERVICE MODEL CARDS ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 36px;
+  }
+  .svc-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .svc-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+  .svc-head {
+    background: #1e2535;
+    padding: 24px 26px;
+    color: #fff;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .svc-num {
+    position: absolute;
+    top: 16px; right: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+  .svc-tag {
+    display: inline-block;
+    background: rgba(232,88,26,0.3);
+    color: #ffb085;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .svc-head h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .svc-head p { color: rgba(255,255,255,0.55); font-size: 13px; }
+  .svc-body { padding: 24px 26px; background: #fff; flex: 1; display: flex; flex-direction: column; }
+  .svc-list { list-style: none; flex: 1; margin-bottom: auto; }
+  .svc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13.5px;
+    color: #555;
+  }
+  .svc-list li:last-child { border-bottom: none; }
+  .svc-list li::before {
+    content: '▸';
+    color: #e8581a;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    font-weight: 700;
+  }
+  .svc-fee {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .svc-fee strong {
+    color: #1e2535;
+    background: #f5f5f5;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+
+  /* ── PROCESS ── */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+    position: relative;
+  }
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 26px; left: 5%; right: 5%;
+    height: 2px;
+    background: rgba(255,255,255,0.12);
+    z-index: 0;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 4px;
+  }
+  .step-num {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #e8581a;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 5px rgba(232,88,26,0.18);
+  }
+  .step h4 {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .step p { color: rgba(255,255,255,0.45); font-size: 11.5px; line-height: 1.5; }
+
+  /* ── DOMAINS ── */
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .domain-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 20px 18px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .domain-card:hover {
+    border-color: #e8581a;
+    box-shadow: 0 4px 18px rgba(232,88,26,0.1);
+    transform: translateY(-2px);
+  }
+  .domain-card.core { border-color: #e8581a; }
+  .domain-emoji { font-size: 22px; margin-bottom: 10px; }
+  .core-tag {
+    display: inline-block;
+    background: #e8581a;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .domain-card h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e2535;
+    margin-bottom: 5px;
+  }
+  .domain-card p { font-size: 12px; color: #888; line-height: 1.55; }
+
+  /* ── WHY US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+  }
+  .why-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-top: 3px solid #e8581a;
+    border-radius: 6px;
+    padding: 24px 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .why-card:hover {
+    box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+    transform: translateY(-2px);
+  }
+  .why-card-icon {
+    width: 44px; height: 44px;
+    background: #fdf2ec;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+  .why-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #1e2535;
+    margin-bottom: 8px;
+  }
+  .why-card p { font-size: 13px; color: #666; line-height: 1.65; }
+
+  /* ── CASE STUDY ── */
+  .case-wrap {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-top: 36px;
+  }
+  .case-sidebar {
+    background: #1e2535;
+    border-radius: 6px;
+    padding: 28px 24px;
+    color: #fff;
+    align-self: start;
+    position: sticky;
+    top: 88px;
+  }
+  .case-sidebar h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .case-sidebar .cs-sub {
+    font-size: 11px;
+    color: #e8581a;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .cs-metric { padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .cs-metric:last-child { border-bottom: none; }
+  .cs-val {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #e8581a;
+    line-height: 1;
+  }
+  .cs-key {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 2px;
+  }
+  .quote-block {
+    border-left: 3px solid #e8581a;
+    padding: 16px 20px;
+    background: #fdf9f6;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 24px;
+    font-style: italic;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.7;
+  }
+  .eng-list { display: flex; flex-direction: column; gap: 18px; }
+  .eng-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #e8581a;
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+  .eng-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .eng-badge {
+    background: #e8581a;
+    color: #fff;
+    width: 26px; height: 26px;
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .eng-header h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e2535;
+    flex: 1;
+  }
+  .eng-model {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    background: #f5f5f5;
+    padding: 3px 9px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .eng-card p { font-size: 13.5px; color: #666; line-height: 1.65; }
+  .eng-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+  .pill {
+    background: #fdf2ec;
+    color: #c94d16;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 11px;
+    border-radius: 3px;
+  }
+
+  /* ── DOWNLOAD ── */
+  .dl-section {
+    background: #f5f5f5;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .dl-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 22px 32px;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-top: 28px;
+  }
+  .dl-card:hover {
+    border-color: #e8581a;
+    box-shadow: 0 6px 20px rgba(232,88,26,0.12);
+    text-decoration: none;
+  }
+  .dl-icon-box {
+    width: 52px; height: 52px;
+    background: #e8581a;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .dl-info { text-align: left; }
+  .dl-info strong { display: block; color: #1e2535; font-size: 15px; margin-bottom: 3px; }
+  .dl-info span { color: #999; font-size: 13px; }
+  .dl-arrow { font-size: 20px; color: #e8581a; margin-left: 10px; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: #e8581a;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .cta-band p { color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 28px; }
+  .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff;
+    color: #e8581a;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .btn-white:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.15); transform: translateY(-1px); text-decoration: none; }
+  .btn-border {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-border:hover { border-color: #fff; background: rgba(255,255,255,0.1); text-decoration: none; }
+  .contact-links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .contact-links a {
+    color: rgba(255,255,255,0.7);
+    font-size: 13.5px;
+    display: flex; align-items: center; gap: 7px;
+    text-decoration: none;
+  }
+  .contact-links a:hover { color: #fff; text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1e2535;
+  }
+  .footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 32px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+  }
+  .footer-col h5 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8581a;
+    display: inline-block;
+  }
+  .footer-col p { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.7; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col ul a { color: rgba(255,255,255,0.55); font-size: 13px; transition: color 0.2s; }
+  .footer-col ul a:hover { color: #e8581a; text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .intro-grid, .services-grid, .case-wrap { grid-template-columns: 1fr; }
+    .cards-3, .why-grid { grid-template-columns: 1fr 1fr; }
+    .domains-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(3, 1fr); }
+    .process-grid::before { display: none; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .footer-main { grid-template-columns: 1fr 1fr; }
+    .case-sidebar { position: static; }
+  }
+  @media (max-width: 640px) {
+    .header-inner nav { display: none; }
+    .page-banner h1 { font-size: 24px; }
+    .section-title { font-size: 22px; }
+    .cards-3, .why-grid, .domains-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .footer-main { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="mailto:info@infocareerindia.com">✉ info@infocareerindia.com</a>
+      <a href="tel:+919003096992">📞 +91 90030 96992</a>
+    </div>
+    <div class="topbar-right">
+      <a href="https://www.facebook.com/Mentoring.infocareerindia/" target="_blank">Facebook</a>
+      <a href="https://twitter.com/InfocareerIndia" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/company/infocareer-pvt-ltd-products-services/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/infocareerpvtltd/" target="_blank">Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="https://www.infocareerindia.com" class="logo" style="text-decoration:none;">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <img src="Infocareer Registered Logo.png" alt="Infocareer" style="height: 35px;">
+        <div class="logo-tag">Your Growth Catalyst</div>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="https://infocareerindia.com/home">Home</a></li>
+        <li><a href="https://infocareerindia.com/services/" class="active">Services</a></li>
+        <li><a href="https://infocareerindia.com/products/">Products</a></li>
+        <li><a href="https://infocareerindia.com/about-us">About Us</a></li>
+        <li><a href="https://infocareerindia.com/contact/">Contact Us</a></li>
+        <li><a href="#contact" class="btn-schedule">Schedule a Call</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <h1>Recruitment Service (RaaS)</h1>
+  
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-val">17+</div>
+      <div class="stat-lbl">Years of Domain Depth</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">50K+</div>
+      <div class="stat-lbl">Professionals Trained</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">100%</div>
+      <div class="stat-lbl">Client Acceptance Rate</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">1 Wk</div>
+      <div class="stat-lbl">Intake to Onboarding</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="section-label">About RaaS</span>
+        <h2 class="section-title">Trusted Expertise.<br><span>Now Hiring For You.</span></h2>
+        <div class="divider"></div>
+        <p class="section-body wide">Since 2008, Infocareer has been the partner of choice for Technology Consulting, Project Management and Agile Transformation. With 17+ years of deep domain expertise and a network of 50,000+ trained professionals, we bring an unmatched understanding of what great talent looks like — built from operating inside these domains, not observing them.</p>
+        <br/>
+        <p class="section-body wide">We now leverage our domain depth and professional network to offer a fully managed, end-to-end talent acquisition service. Whether you need a permanent specialist or a just-in-time contract resource — Infocareer owns the entire hiring process, so you can focus on your business.</p>
+        <br/>
+        <a href="infocareer RAAS brochure.pdf" download target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#e8581a;color:#fff;padding:11px 22px;border-radius:4px;font-weight:700;font-size:13.5px;margin-top:8px;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#c94d16'" onmouseout="this.style.background='#e8581a'">⬇ Download Brochure (PDF)</a>
+      </div>
+      <div class="intro-image">
+        <img src="india interview tips.png" alt="End-to-End Talent Acquisition" style="width:100%;height:auto;border-radius:8px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIRING CHALLENGE -->
+<section class="section bg-light">
+  <div class="container">
+    <span class="section-label">The Problem</span>
+    <h2 class="section-title">Every Growing Business Faces<br><span>These Hiring Roadblocks</span></h2>
+    <div class="divider"></div>
+    <div class="cards-3">
+      <div class="card">
+        <div class="card-icon">⏱</div>
+        <h3>Slow Time-to-Hire</h3>
+        <p>Average 42 days to fill a role. Delays cost projects, revenue, and competitive momentum.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <h3>High Recruitment Costs</h3>
+        <p>Building in-house teams means tools, headcount, and infrastructure overhead with no guarantee of results.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Talent Mismatch</h3>
+        <p>Generic job boards flood HR with irrelevant profiles, wasting valuable time and creating frustration.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Attrition &amp; Churn</h3>
+        <p>Early exits create costly repeat hiring cycles that drain budgets and derail delivery timelines.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Contract Complexity</h3>
+        <p>Managing short-term agreements, background verification and statutory compliance without a partner is hard.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Multi-Domain Gaps</h3>
+        <p>Tech, manufacturing, construction and finance each need very different talent profiles and assessment approaches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE MODELS -->
+<section class="section" id="services">
+  <div class="container">
+    <span class="section-label">Our Offering</span>
+    <h2 class="section-title">Two Engagement Models —<br><span>Both Fully Managed</span></h2>
+    <div class="divider"></div>
+    <p class="section-body">A complete hiring engine without the overhead of building one in-house. You define the need — Infocareer owns everything else.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-head">
+          <!-- <div class="svc-num">01</div> -->
+          <div class="svc-tag">Permanent Hiring</div>
+          <h3>One-Time Placement</h3>
+          <p>You define the role — we source, screen, and deliver the right candidate end-to-end.</p>
+        </div>
+        <div class="svc-body">
+          <ul class="svc-list">
+            <li>Domain-expert sourcing &amp; multi-layer screening</li>
+            <li>3–5 interview-ready profiles with IC assessments</li>
+            <li>Interview coordination &amp; scheduling</li>
+            <li>BGV, offer management &amp; onboarding support</li>
+            <li>60-day free replacement guarantee</li>
+            <li>Single-point accountability, intake to onboarding</li>
+          </ul>
+          <div class="svc-fee">Fee: <strong>% of Candidate's Annual CTC</strong></div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-head">
+          <!-- <div class="svc-num">02</div> -->
+          <div class="svc-tag">Contract / Project</div>
+          <h3>Contract Placement</h3>
+          <p>Specialist on our payroll, deployed at your site — zero employment risk to you.</p><br>
+        </div>
+        <div class="svc-body">
+          <ul class="svc-list">
+            <li>In-house talent or empanelled freelancers</li>
+            <li>Infocareer absorbs all payroll &amp; compliance risk</li>
+            <li>On-site deployment within 1–10 business days</li>
+            <li>Flexible durations: 1 to 12 months, extendable</li>
+            <li>Contract-to-hire clause available</li>
+            <li>Monthly billing at agreed cost + margin</li>
+          </ul>
+          <div class="svc-fee">Billing: <strong>Monthly · Cost + Margin</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section bg-dark" id="process">
+  <div class="container">
+    <span class="section-label" style="color:#ffb085;">How We Work</span>
+    <h2 class="section-title light">Our Recruitment Process</h2>
+    <div class="divider"></div>
+    <p class="section-body" style="color:rgba(255,255,255,0.5)">Every engagement follows a rigorous six-step process — from your first conversation to the candidate's first day.</p>
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Requirement Intake</h4>
+        <p>JD, skills, budget &amp; timeline captured in detail</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Sourcing &amp; Mapping</h4>
+        <p>Multi-channel search across networks &amp; databases</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Screen &amp; Assess</h4>
+        <p>Technical + culture-fit evaluation by domain experts</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Shortlist &amp; Present</h4>
+        <p>Curated profiles with IC assessment notes</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h4>Interview Management</h4>
+        <p>Scheduling, debrief &amp; feedback coordination</p>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <h4>Offer &amp; Onboard</h4>
+        <p>BGV, documentation &amp; smooth handover</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="section bg-light" id="domains">
+  <div class="container">
+    <span class="section-label">Coverage</span>
+    <h2 class="section-title">Domains We <span>Hire For</span></h2>
+    <div class="divider"></div>
+    <p class="section-body">Technology is our foundation — we hire across eight domains with the same rigour and domain-specific expertise in each one.</p>
+    <div class="domains-grid">
+      <div class="domain-card core">
+        <div class="core-tag">Core</div>
+        <div class="domain-emoji">💻</div>
+        <h4>Information Technology</h4>
+        <p>Developers, QA, DevOps, Cloud, UI/UX, Data Engineers</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">📋</div>
+        <h4>Project Management</h4>
+        <p>PMs, PgMs, PMO Analysts, Scrum Masters, BAs</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">☁️</div>
+        <h4>Salesforce &amp; CRM</h4>
+        <p>Admins, Developers, Architects, Consultants</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">🔄</div>
+        <h4>Agile &amp; Delivery</h4>
+        <p>Agile Coaches, RTEs, Product Owners, Delivery Leads</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">🏭</div>
+        <h4>Manufacturing &amp; Ops</h4>
+        <p>Lean Consultants, Quality Managers, Process Engineers</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">🏗️</div>
+        <h4>Construction &amp; Engineering</h4>
+        <p>Project Engineers, Site Managers, QS, HSE Officers</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">💰</div>
+        <h4>Finance &amp; Accounts</h4>
+        <p>CFOs, Financial Analysts, Cost Accountants, Compliance</p>
+      </div>
+      <div class="domain-card">
+        <div class="domain-emoji">🎓</div>
+        <h4>Learning &amp; Development</h4>
+        <p>Corporate Trainers, Instructional Designers, Coaches</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY INFOCAREER -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">The Infocareer Advantage</span>
+    <h2 class="section-title">Why Choose <span>Infocareer?</span></h2>
+    <div class="divider"></div>
+    <p class="section-body">We are not just recruiters — we are industry insiders. Deep expertise across IT, Project Management, Agile, Manufacturing, Construction and Finance means we truly understand your roles, not just the job descriptions.</p>
+    <br/>
+    <p class="section-body" style="font-style:italic;color:#888;"><em>"Your business goals are unique; we believe we can add value too." — A. Chandrasekaran, Director</em></p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">🏆</div>
+        <h3>17+ Years of Domain Depth</h3>
+        <p>Our team has operated inside IT, PM and consulting for two decades — we assess talent the way your technical leaders do.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">⚡</div>
+        <h3>Unmatched Speed to Hire</h3>
+        <p>Contract resources mobilised in 1–10 days. Permanent hires closed within 25 business days. Our warm pipeline means we never start from zero.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🛡️</div>
+        <h3>We Absorb Your Risk</h3>
+        <p>In contract placements, Infocareer carries full payroll, statutory and compliance obligations. You gain the talent — none of the legal exposure.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🌐</div>
+        <h3>Network of 50,000+ Professionals</h3>
+        <p>Our PMP alumni, Agile coaches and tech specialists are reachable from day one — passive candidates that job portals cannot surface.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🔍</div>
+        <h3>Rigorous Multi-Layer Screening</h3>
+        <p>Every candidate is technically evaluated, culture-assessed and fully background-verified. You only interview people we are confident about.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">📌</div>
+        <h3>Single-Point Accountability</h3>
+        <p>One contact from intake to onboarding. Full transparency, zero ambiguity and a 60-day replacement guarantee on every permanent placement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="section bg-light" id="results">
+  <div class="container">
+    <span class="section-label">Client Results</span>
+    <h2 class="section-title">Building a High-Performance<br><span>Technology Talent Engine</span></h2>
+    <div class="divider"></div>
+    <p class="section-body">A multi-year, multi-role recruitment partnership with a large technology company in the Fintech space — across multiple locations in India.</p>
+    <div class="case-wrap">
+      <div class="case-sidebar">
+        <h4>Fintech Client</h4>
+        <div class="cs-sub">5+ Year Ongoing Engagement</div>
+        <div class="cs-metric">
+          <div class="cs-val">5+</div>
+          <div class="cs-key">Years &amp; Ongoing</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-val">25+</div>
+          <div class="cs-key">Roles Filled (Data Annotation)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-val">100%</div>
+          <div class="cs-key">Client Acceptance Rate</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-val">1 Wk</div>
+          <div class="cs-key">Intake to Full Team Onboarded</div>
+        </div>
+      </div>
+      <div>
+        <div class="quote-block">
+          "Infocareer has been our trusted recruitment partner across multiple functions and skill levels. What stands out is their deep understanding of technical requirements, their rigorous screening process, and their ability to mobilise the right talent — fast. The relationship has now entered its fifth year and continues to grow."
+        </div>
+        <div class="eng-list">
+          <div class="eng-card">
+            <div class="eng-header">
+              <div class="eng-badge">01</div>
+              <h4>Building a Data Annotation Team — 25 Professionals in One Week</h4>
+              <span class="eng-model">Contract Placement</span>
+            </div>
+            <p>~100 candidates were sourced and put through dual-layer assessments (aptitude + English proficiency) before any face-to-face interviews. All 25 positions were filled and onboarded within a single calendar week, with a 100% shortlist acceptance rate and zero re-interviews required.</p>
+            <div class="eng-pills">
+              <span class="pill">100% Selection Rate</span>
+              <span class="pill">7-Day Delivery</span>
+              <span class="pill">Zero Rework</span>
+              <span class="pill">Attrition-Proof Pipeline</span>
+            </div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-header">
+              <div class="eng-badge">02</div>
+              <h4>Deploying Salesforce Professionals Across Three Cities</h4>
+              <span class="eng-model">Contract to Hire</span>
+            </div>
+            <p>Certified Salesforce professionals placed across Chennai, Pune and Hyderabad using a two-stage assessment — Infocareer's own fitment interview followed by the client's technical interview. The majority were later absorbed onto the client's payroll directly.</p>
+            <div class="eng-pills">
+              <span class="pill">8 Professionals Placed</span>
+              <span class="pill">Chennai · Pune · Hyderabad</span>
+              <span class="pill">Majority Converted Permanent</span>
+            </div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-header">
+              <div class="eng-badge">03</div>
+              <h4>Continuous Talent Supply — Process, Java &amp; QA Professionals</h4>
+              <span class="eng-model">On-Demand</span>
+            </div>
+            <p>Ongoing on-demand sourcing of Process Associates, Salesforce Business Analysts, Java Developers and Software Testers — filled responsively as the client's project pipeline evolved. Infocareer functions as an embedded talent desk requiring no repeated onboarding.</p>
+            <div class="eng-pills">
+              <span class="pill">Process Associates</span>
+              <span class="pill">Java Developers</span>
+              <span class="pill">QA Specialists</span>
+              <span class="pill">Salesforce BAs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<div class="dl-section">
+  <span class="section-label">Resources</span>
+  <h2 class="section-title" style="margin-top:8px;">Download Our RaaS Brochure</h2>
+  <p class="section-body" style="margin:10px auto 0;text-align:center;max-width:540px;">Everything your leadership team needs to know — services, process, commercials and proven results, all in one document.</p>
+  <a href="infocareer RAAS brochure.pdf" download="infocareer RAAS brochure.pdf" target="_blank" class="dl-card">
+    <div class="dl-icon-box">📄</div>
+    <div class="dl-info">
+      <strong>Infocareer RaaS Brochure</strong>
+      <span>PDF · Service overview, models &amp; client results</span>
+    </div>
+    <span class="dl-arrow">⬇</span>
+  </a>
+</div>
+
+<!-- CTA -->
+<div class="cta-band" id="contact">
+  <h2>Let's Build Your Recruitment Engine</h2>
+  <p>Schedule a free 30-minute discovery call. No obligations — just a conversation about your talent needs.</p>
+  <div class="cta-btns">
+    <a href="mailto:info@infocareerindia.com" class="btn-white">✉ Email Us</a>
+    <a href="tel:+919003096992" class="btn-border">📞 +91 90030 96992</a>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:info@infocareerindia.com">✉ info@infocareerindia.com</a>
+    <a href="https://www.infocareerindia.com" target="_blank">🌐 www.infocareerindia.com</a>
+    <span style="color:rgba(255,255,255,0.7);font-size:13.5px;">📍 Chennai · San Francisco</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-col">
+      <img src="Infocareer Registered Logo.png" alt="Infocareer" style="height: 40px;margin-bottom: 12px;">
+      <div style="font-size:11px;color:#e8581a;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;font-weight:600;">Your Growth Catalyst</div>
+      <p>No.38, SPL Sri Ram Nivas, 3rd Floor,<br/>Venkatakrishna Road, Mandaveli,<br/>Chennai – 600028, India.</p>
+      <br/>
+      <p>548 Market Street,<br/>San Francisco, CA 94104, USA.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="https://infocareerindia.com/mentoring/">Mentoring</a></li>
+        <li><a href="https://infocareerindia.com/consulting/">Consulting</a></li>
+        <li><a href="https://salesforce.infocareerindia.com/" target="blank">Salesforce</a></li>
+        <li><a href="https://infocareerindia.com/techagile/">TechAgile</a></li>
+        <li><a href="https://infocareerindia.com/data-annotation/">Data Annotation</a></li>
+        <li><a href="#" style="color:#e8581a;font-weight:600;">Recruitment as a Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="https://infocareerindia.com/about-us">About Us</a></li>
+        <li><a href="https://infocareerindia.com/clients/">Our Clients</a></li>
+        <li><a href="https://infocareerindia.com/case-studies/">Case Studies</a></li>
+        <li><a href="https://infocareer.greythr.com/hire/jobs">Careers</a></li>
+        <li><a href="https://infocareerindia.com/contact/">Contact Us</a></li>
+        <li><a href="https://infocareerindia.com/newsletters/">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <p><a href="mailto:info@infocareerindia.com" style="color:rgba(255,255,255,0.55);">info@infocareerindia.com</a></p>
+      <br/>
+      <p><a href="tel:+919003096992" style="color:rgba(255,255,255,0.55);">+91 90030 96992</a></p>
+      <p><a href="tel:+919566261931" style="color:rgba(255,255,255,0.55);">+91 95662 61931</a></p>
+      <br/>
+      <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap;">
+        <a href="https://www.facebook.com/Mentoring.infocareerindia/" target="_blank" style="color:rgba(255,255,255,0.45);font-size:12px;">Facebook</a>
+        <a href="https://twitter.com/InfocareerIndia" target="_blank" style="color:rgba(255,255,255,0.45);font-size:12px;">Twitter</a>
+        <a href="https://linkedin.com/company/infocareer-pvt-ltd-products-services/" target="_blank" style="color:rgba(255,255,255,0.45);font-size:12px;">LinkedIn</a>
+        <a href="https://www.instagram.com/infocareerpvtltd/" target="_blank" style="color:rgba(255,255,255,0.45);font-size:12px;">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Infocareer Pvt Ltd. All Rights Reserved. &nbsp;·&nbsp;
+    <a href="https://infocareerindia.com/wp-content/uploads/2023/01/Infocareer-Privacy-Policy.pdf" style="color:rgba(255,255,255,0.3);">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="https://infocareerindia.com/wp-content/uploads/2023/01/Infocareer-Terms-of-Use.pdf" style="color:rgba(255,255,255,0.3);">Terms of Use</a>
+  </div>
+</footer>
+
+</body>
+</html>
